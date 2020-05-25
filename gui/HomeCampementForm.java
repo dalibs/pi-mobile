@@ -5,6 +5,7 @@
  */
 package com.mycompany.gui;
 
+import com.codename1.components.MultiButton;
 import com.codename1.ui.Button;
 import com.codename1.ui.Form;
 import com.codename1.ui.Label;
@@ -16,27 +17,26 @@ import com.codename1.uikit.pheonixui.BaseForm;
  *
  * @author bhk
  */
-public class HomeCampementForm extends AssociationBaseForm{
-       public HomeCampementForm() {
+public class HomeCampementForm extends AssociationBaseForm {
+
+    public HomeCampementForm() {
         this(com.codename1.ui.util.Resources.getGlobalResources());
     }
-Form current;
+    Form current;
+
     public HomeCampementForm(com.codename1.ui.util.Resources resourceObjectInstance) {
-        current=this;
-        setTitle("Home");
+        current = this;
+        setTitle("Association Home");
         setLayout(BoxLayout.y());
         installSidemenu(resourceObjectInstance);
-        
-        add(new Label("Choose an option"));
-        Button btnAddTask = new Button("Add Task");
-        Button btnListTasks = new Button("List Tasks");
-        
-        btnAddTask.addActionListener(e-> new AddCampementForm(current).show());
-        btnListTasks.addActionListener(e-> new ListCapementForm(current).show());
-        addAll(btnAddTask,btnListTasks);
-        
-        
+
+        add(new Label("Welcome to association home"));
+
+        MultiButton twoLinesNoIcon = new MultiButton("Powered by "
+        );
+
+        twoLinesNoIcon.setTextLine2("Codex Team");
+        add(twoLinesNoIcon);
     }
-    
-    
+
 }
