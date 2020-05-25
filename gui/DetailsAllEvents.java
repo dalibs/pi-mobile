@@ -5,6 +5,7 @@
  */
 package com.mycompany.gui;
 
+import com.codename1.components.InfiniteProgress;
 import com.codename1.components.WebBrowser;
 import com.codename1.l10n.SimpleDateFormat;
 import com.codename1.ui.BrowserComponent;
@@ -27,8 +28,9 @@ import com.mycompany.myapp.entites.Evenement;
 public class DetailsAllEvents extends Form {
 
     public DetailsAllEvents(Form previous, Resources theme, Evenement f) {
+         
         setTitle("Details of event " + f.getNomEvent());
-       
+      
         getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, e -> previous.showBack());
         
 //        AfficherAllEvents aae = new AfficherAllEvents(previous, theme);
