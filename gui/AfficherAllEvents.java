@@ -36,8 +36,8 @@ public class AfficherAllEvents extends Form {
     public AfficherAllEvents(Form previous, Resources theme) {
 //        super("List of All Events", BoxLayout.y());
 //        getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, e -> previous.showBack());
-      
-add(new InfiniteProgress());
+
+        add(new InfiniteProgress());
         EvenementController fc = new EvenementController();
         // Container cont = new Container(new BoxLayout(BoxLayout.Y_AXIS));
 
@@ -64,8 +64,6 @@ add(new InfiniteProgress());
                         //MultiButton m1 = new MultiButton(e.getNomEvent());
                         twoLinesNoIcon.setTextLine2("Event Name : " + e.getNomEvent());
                         twoLinesNoIcon.setTextLine1("category : " + e.getCategorie());
-
-                     
 
                         twoLinesNoIcon.addActionListener(new ActionListener() {
                             @Override

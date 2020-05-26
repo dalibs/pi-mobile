@@ -104,7 +104,7 @@ public class AddEventForm extends Form {
                     Dialog.show("Erreur", "veuillez saisir la date de fin", "Ok", null);
 
                 } else if (tfLong.getText().equals("")) {
-                    Dialog.show("Erreur", "veuillez saisir la longitude", "Ok", null);
+                    Dialog.show("Erreur", "veuillez choisir un position dans la map", "Ok", null);
                 } else if (tfLat.getText().equals("")) {
                     Dialog.show("Erreur", "veuillez saisir la latitude", "Ok", null);
                 } else if (tfDesc.getText().equals("")) {

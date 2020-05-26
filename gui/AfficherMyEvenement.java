@@ -76,6 +76,7 @@ public class AfficherMyEvenement extends Form {
         });
         NetworkManager.getInstance().addToQueue(con);
         //   add(toolbarC);
+        
 
         // add(container1);
         add(container);
@@ -124,6 +125,7 @@ public class AfficherMyEvenement extends Form {
 //                 float id = Float.parseFloat(obj.get("id_association").toString());
 //                c.setId_association((int)idAssoc);
                 events.add(c);
+                //Ajouter l'evenement extrait de la réponse Json à la liste
             }
 
         } catch (IOException ex) {
