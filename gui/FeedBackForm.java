@@ -61,7 +61,7 @@ public class FeedBackForm extends Form {
                     hi.getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, e -> previous.showBack());
                     boolean ans = listFeedBack.isEmpty();
                     if (ans == true) {
-                        hi.add(new Label("No feedback", "WelcomeTitle"));
+                        hi.add(new Label("No available feedback for this event", "WelcomeTitle"));
                         System.out.println("empty");
                     }
                     for (Eventfeedback fb : listFeedBack) {
