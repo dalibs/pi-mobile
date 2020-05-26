@@ -86,13 +86,13 @@ public class EvenementController {
         ConnectionRequest con = new ConnectionRequest();
 
         con.setUrl("http://localhost/pidev_world-aid/web/app_dev.php/association/EditEventMobile?idEvent=" + e.getIdEvent() + "&nomEvent=" + tNomEvent.getText() + "&description=" + tDescription.getText() + "&categorie=" + categorie.getSelectedItem() + "&longitude=" + tLongitude.getText() + "&latitude=" + tLongitude.getText());
-
+//creation et insertaion de url de demande de cnx
         con.addResponseListener(new ActionListener<NetworkEvent>() {
 
             @Override
             public void actionPerformed(NetworkEvent evt) {
-                byte[] data = (byte[]) evt.getMetaData();
-                String s = new String(data);
+                byte[] data = (byte[]) evt.getMetaData();//on recupere les meta data à partir de network evt
+                String s = new String(data);//transformer de byte en string
 
                 //  if (s.equals("success")) {
                 //   Dialog.show("Confirmation", "modification ok", "Ok", null);
