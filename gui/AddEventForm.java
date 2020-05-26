@@ -80,7 +80,7 @@ public class AddEventForm extends Form {
         Label lstartDate = new Label("Pick  Start Date:");
         Label lfinDate = new Label("Pick Finish Date:");
         Label position = new Label("Choose the event place:");
-
+        cb.addItem("");
         cb.addItem("Enfants");
         cb.addItem("Femmes");
         cb.addItem("SDF");
@@ -104,13 +104,13 @@ public class AddEventForm extends Form {
                     Dialog.show("Erreur", "veuillez saisir la date de fin", "Ok", null);
 
                 } else if (tfLong.getText().equals("")) {
-                    Dialog.show("Erreur", "veuillez choisir un position dans la map", "Ok", null);
+                    Dialog.show("Erreur", "veuillez choisir une position dans la map", "Ok", null);
                 } else if (tfLat.getText().equals("")) {
                     Dialog.show("Erreur", "veuillez saisir la latitude", "Ok", null);
                 } else if (tfDesc.getText().equals("")) {
                     Dialog.show("Erreur", "veuillez saisir une description", "Ok", null);
-//                } else if (cb.getSelectedItem().equals("")) {
-//                    Dialog.show("Erreur", "veuillez choisir une categorie", "Ok", null);
+               } else if (cb.getSelectedItem().equals("")) {
+                  Dialog.show("Erreur", "veuillez choisir une categorie", "Ok", null);
                 } else {
 
                     //  ec.addEvent(tfName, tfdateDebFormation, tfdateFinFormation, tfLong, tfLat, tfDesc, tfCate, theme);
