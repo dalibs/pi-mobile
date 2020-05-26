@@ -16,7 +16,6 @@ import com.codename1.l10n.ParseException;
 import com.codename1.ui.Component;
 import com.codename1.ui.FontImage;
 import com.codename1.ui.Form;
-import com.codename1.ui.Image;
 import com.codename1.ui.events.ActionEvent;
 import com.codename1.ui.events.ActionListener;
 import com.codename1.ui.layouts.BoxLayout;
@@ -37,7 +36,8 @@ public class AfficherAllEvents extends Form {
     public AfficherAllEvents(Form previous, Resources theme) {
 //        super("List of All Events", BoxLayout.y());
 //        getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, e -> previous.showBack());
-        add(new InfiniteProgress());
+      
+add(new InfiniteProgress());
         EvenementController fc = new EvenementController();
         // Container cont = new Container(new BoxLayout(BoxLayout.Y_AXIS));
 
@@ -83,7 +83,6 @@ public class AfficherAllEvents extends Form {
                                 // clear search
                                 for (Component cmp : hi.getContentPane()) {
                                     cmp.setHidden(false);
-
                                     cmp.setVisible(true);
 
                                 }

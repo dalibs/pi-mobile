@@ -5,9 +5,6 @@
  */
 package com.mycompany.gui;
 
-import com.codename1.components.InfiniteProgress;
-import com.codename1.components.MultiButton;
-import com.codename1.contacts.Contact;
 import com.codename1.io.CharArrayReader;
 import com.codename1.io.ConnectionRequest;
 import com.codename1.io.JSONParser;
@@ -16,16 +13,13 @@ import com.codename1.io.NetworkManager;
 import com.codename1.l10n.ParseException;
 import com.codename1.l10n.SimpleDateFormat;
 import com.codename1.ui.Button;
-import com.codename1.ui.Component;
 import com.codename1.ui.Container;
 import com.codename1.ui.Dialog;
-import com.codename1.ui.Display;
 import com.codename1.ui.FontImage;
 import com.codename1.ui.Form;
 import com.codename1.ui.Image;
 import com.codename1.ui.Label;
 import com.codename1.ui.TextField;
-import com.codename1.ui.Toolbar;
 import com.codename1.ui.events.ActionEvent;
 import com.codename1.ui.events.ActionListener;
 import com.codename1.ui.layouts.BorderLayout;
@@ -50,13 +44,12 @@ public class AfficherMyEvenement extends Form {
         getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, e -> previous.showBack());
 
         Container toolbarC = new Container(new BoxLayout(BoxLayout.X_AXIS));
-        TextField zoneRecherche = new TextField();
-   
-        zoneRecherche.setHint("Search");
-        Button boutonRecherche = new Button("Ok");
-        toolbarC.add(boutonRecherche);
-        toolbarC.add(zoneRecherche);
+        // TextField zoneRecherche = new TextField();
 
+//        zoneRecherche.setHint("Search");
+//        Button boutonRecherche = new Button("Ok");
+//        toolbarC.add(boutonRecherche);
+//        toolbarC.add(zoneRecherche);
         add(toolbarC);
 
         EvenementController fc = new EvenementController();

@@ -17,7 +17,7 @@ import com.codename1.ui.Component;
 import com.codename1.ui.Container;
 import com.codename1.ui.FontImage;
 import com.codename1.ui.Form;
-import com.codename1.ui.events.ActionEvent;
+import com.codename1.ui.Label;
 import com.codename1.ui.events.ActionListener;
 import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.util.Resources;
@@ -57,16 +57,23 @@ public class FeedBackForm extends Form {
                     // container.add(Createcontainer(listFeedBack.get(i), previous, theme));
                     //Component[] listingsToAdd = new Component[listFeedBack.size()];
 
-                    Form hi = new Form("Feeds Back Of Event " + f.getNomEvent(), BoxLayout.y());
+                    Form hi = new Form("Feeds Back Of " + f.getNomEvent(), BoxLayout.y());
                     hi.getToolbar().addMaterialCommandToLeftBar("", FontImage.MATERIAL_ARROW_BACK, e -> previous.showBack());
+                    boolean ans = listFeedBack.isEmpty();
+                    if (ans == true) {
+                        hi.add(new Label("No feedback", "WelcomeTitle"));
+                        System.out.println("empty");
+                    }
                     for (Eventfeedback fb : listFeedBack) {
                         MultiButton twoLinesNoIcon = new MultiButton(fb.getSujet());
                         //        twoLinesNoIcon.setIcon();
                         twoLinesNoIcon.setTextLine1(fb.getSujet());
                         twoLinesNoIcon.setTextLine2(fb.getMessage());
                         //    MultiButton twoLinesNoIcon = new MultiButton("Sujet :" + fb.getSujet());
-                        // twoLinesNoIcon.setTextLine2("Message :" + fb.getMessage());                       
+                        // twoLinesNoIcon.setTextLine2("Message :" + fb.getMessage());  
+
                         hi.add(twoLinesNoIcon);
+
                     }
 
                     //   hi.refreshTheme();
@@ -82,6 +89,7 @@ public class FeedBackForm extends Form {
 
                             }
                             hi.getContentPane().animateLayout(150);
+
                         } else {
                             text = text.toLowerCase();
                             for (Component cmp : hi.getContentPane()) {

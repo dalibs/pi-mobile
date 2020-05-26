@@ -5,7 +5,10 @@
  */
 package com.mycompany.gui;
 
+import com.codename1.components.SpanLabel;
 import com.codename1.ui.Button;
+import com.codename1.ui.Container;
+import com.codename1.ui.Display;
 import com.codename1.ui.Form;
 import com.codename1.ui.Label;
 import com.codename1.ui.layouts.BoxLayout;
@@ -35,7 +38,14 @@ public class HomeEventForm extends AssociationBaseForm {
 
         installSidemenu(resourceObjectInstance);
 
-        add(new Label("Choose an option :"));
+       // add(new Label("Event Manger :"));
+       
+        Container content = BoxLayout.encloseY(
+                new Label("Event Manager", "WelcomeTitle"),
+                new Label("Please choose an option", "WelcomeTitle")
+                );
+        add(content);
+       add( new Label(resourceObjectInstance.getImage("calendar-separator.png"), "WelcomeTitle"));
         Button btnAddTask = new Button("Add An Event");
         Button btnListTasks = new Button("List My Events");
         Button btnListEvents = new Button("List All Events");
@@ -44,6 +54,26 @@ public class HomeEventForm extends AssociationBaseForm {
         btnListTasks.addActionListener(e -> new AfficherMyEvenement(current, theme).show());
         btnListEvents.addActionListener(e -> new AfficherAllEvents(current, theme).show());
         addAll(btnAddTask, btnListTasks, btnListEvents);
+        
+        
+        String line1 = "In this section you have the possibility as an association to manage events so you can choose one of these options.";
+        if (!Display.getInstance().isTablet()) {
+            line1 = line1.replace('\n', ' ');
+        }
+        
+        Container content1 = BoxLayout.encloseY(
+                new Label("WorldAid", "WelcomeTitle"),
+                new Label(resourceObjectInstance.getImage("welcome-separator.png"), "WelcomeTitle"),
+                new SpanLabel(line1, "WelcomeBody")
+        );
+        
+        Container content2 = BoxLayout.encloseY(
+        
+                 new Label(resourceObjectInstance.getImage("logo.png"), "WelcomeTitle")
+                
+          );
+        add(content1);
+          add(content2);
 
     }
 
